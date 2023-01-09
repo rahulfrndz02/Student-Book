@@ -35,6 +35,7 @@ public class StudentController {
         catch (Exception e){
             throw new RuntimeException(e);
         }
+
     }
 
     @PutMapping("/update_name")

@@ -18,7 +18,6 @@ public class Book {
 
     @Id //making primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "book_id")
     private int id;
 
     @Column(name="book_name") //column name
