@@ -21,8 +21,7 @@ public class BookController {
             bookService.createBook(book);
         }
         catch (Exception e){
-           // throw new RuntimeException(e);
-            System.out.println(e);
+           throw new RuntimeException(e);
         }
     }
 
