@@ -4,6 +4,7 @@ import com.libraryAPIDB.librarydb.Models.Book;
 import com.libraryAPIDB.librarydb.Models.Student;
 import com.libraryAPIDB.librarydb.Repository.BookRepository;
 import com.libraryAPIDB.librarydb.Models.UpdateBookPages;
+import com.libraryAPIDB.librarydb.Repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,9 @@ public class BookService {
 
     @Autowired
     BookRepository bookRepository;
+
+    @Autowired
+    StudentRepository studentRepository;
 
     public void createBook(Book book) {
         Book bookObj = new Book();
@@ -36,7 +40,6 @@ public class BookService {
     }
 
     public void deleteBookById(Integer id){
-        bookRepository.deleteAllById(Collections.singleton(id));
+        bookRepository.deleteById(id);
     }
-
 }

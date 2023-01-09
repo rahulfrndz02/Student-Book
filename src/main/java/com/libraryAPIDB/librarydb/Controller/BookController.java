@@ -42,8 +42,12 @@ public class BookController {
     }
 
     @DeleteMapping("/delete_book_by_id/{id}")
-    public String deleteEmployee(@PathParam("id") Integer id) {
-        bookService.deleteBookById(id);
-        return "Deleted successfully";
+    public void deleteBook(@PathVariable("id") Integer id) {
+        try {
+            bookService.deleteBookById(id);
+        }
+        catch (Exception e){
+            System.out.println(e);
+        }
     }
 }
