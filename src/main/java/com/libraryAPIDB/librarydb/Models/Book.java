@@ -13,8 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @AllArgsConstructor
 @Getter
 @Setter
-@RequestMapping("book")
-@Table(name = "book_table") //creating table
+@Table(name = "book") //creating table
 public class Book {
 
     @Id //making primary key
@@ -27,7 +26,6 @@ public class Book {
     private int pages;
 
     private String author;
-
 
     @OneToOne
     @JoinColumn //a column has been added in the child class

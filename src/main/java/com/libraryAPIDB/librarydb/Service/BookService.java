@@ -16,7 +16,11 @@ public class BookService {
     BookRepository bookRepository;
 
     public void createBook(Book book) {
-        bookRepository.save(book);
+        Book bookObj = new Book();
+        bookObj.setName(book.getName());
+        bookObj.setPages(book.getPages());
+        bookObj.setAuthor(book.getAuthor());
+        bookRepository.save(bookObj);
     }
 
     public Book getBookById(Integer id){
